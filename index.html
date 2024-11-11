@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple calculator app for quick calculations.">
+  <meta name="keywords" content="Calculator, Calculadora, Calculatrice, Taschenrechner, Calcolatrice, Calculadora, Rekenen, Калькулятор, 계산기, 電卓, 计算器, آلة حاسبة, कैलकुलेटर, Hesap Makinesi, Υπολογιστής, कैलकुलेटर, کیلکولیٹر, Máy tính, Miniräknare, Lommeregner">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="en">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Structured Data (Schema Markup) -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Calculator",
+      "operatingSystem": "Web",
+      "applicationCategory": "Utility",
+      "description": "A simple calculator app for quick calculations.",
+      "keywords": "Calculator, Web, Utility, Math",
+      "author": {
+        "@type": "Person",
+        "name": "Your Name or Organization"
+      },
+      "url": "https://www.yourwebsite.com",
+      "sameAs": "https://www.yourwebsite.com/social-media-links",
+      "logo": "https://www.yourwebsite.com/logo.png",
+      "screenshot": "https://www.yourwebsite.com/screenshot.png",
+      "downloadUrl": "https://www.yourwebsite.com/download",
+      "datePublished": "2024-11-11",
+      "applicationSubCategory": "Calculator"
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="calculator" aria-label="Calculator">
+      <div class="display" id="display" aria-live="polite">0</div>
+      <div class="buttons">
+        <!-- row 1 -->
+        <button class="clear" onclick="clearDisplay()" aria-label="Clear All">C</button>
+        <button class="operator" onclick="inputSquareRoot()" aria-label="Square Root">√</button>
+        <button class="operator" onclick="inputSquare()" aria-label="Square">a²</button>
+        <button class="operator" onclick="inputOperator('*')" aria-label="Multiply">×</button>
+
+        <!-- row 2 -->
+        <button class="number" onclick="inputNumber('7')" aria-label="Number 7">7</button>
+        <button class="number" onclick="inputNumber('8')" aria-label="Number 8">8</button>
+        <button class="number" onclick="inputNumber('9')" aria-label="Number 9">9</button>
+        <button class="operator" onclick="inputOperator('/')" aria-label="Divide">÷</button>
+
+        <!-- row 3 -->
+        <button class="number" onclick="inputNumber('4')" aria-label="Number 4">4</button>
+        <button class="number" onclick="inputNumber('5')" aria-label="Number 5">5</button>
+        <button class="number" onclick="inputNumber('6')" aria-label="Number 6">6</button>
+        <button class="operator" onclick="inputOperator('-')" aria-label="Subtract">−</button>
+
+        <!-- row 4 -->
+        <button class="number" onclick="inputNumber('1')" aria-label="Number 1">1</button>
+        <button class="number" onclick="inputNumber('2')" aria-label="Number 2">2</button>
+        <button class="number" onclick="inputNumber('3')" aria-label="Number 3">3</button>
+        <button class="operator" onclick="inputOperator('+')" aria-label="Add">+</button>
+
+        <!-- row 5 -->
+        <button class="number" onclick="inputNumber('.')">.</button>
+        <button class="number" onclick="inputNumber('0')" aria-label="Number 0">0</button>
+        <button class="delete" onclick="deleteLastDigit()" aria-label="Delete Last Digit">←</button>
+        <button class="equals" onclick="calculate()" aria-label="Equals">=</button>
+      </div>
+    </div>
+
+    <div class="results" id="results" aria-label="Recent Results">
+      <div class="result">0</div>
+      <div class="result">0</div>
+      <div class="result">0</div>
+      <div class="result">0</div>
+      <div class="result">0</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

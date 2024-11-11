@@ -1,0 +1,172 @@
+/* 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* 계산기 스타일 */
+.calculator {
+  width: 400px;
+  border: 2px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+  height: 60px;
+  background-color: #222;
+  color: #fff;
+  font-size: 2em;
+  text-align: right;
+  padding: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 2px;
+  background-color: #333;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+}
+
+/* 버튼 색상 */
+.number {
+  background-color: #444;
+  color: #fff;
+}
+
+.operator {
+  background-color: #f08a24;
+  color: #fff;
+}
+
+.equals {
+  background-color: #f08a24;
+  color: #fff;
+}
+
+.clear {
+  background-color: #cc3333;
+  color: #fff;
+}
+
+.delete {
+  background-color: #999;
+  color: #fff;
+}
+
+/* 루트 및 제곱 버튼 색상 */
+button[onclick*="inputSquareRoot"],
+button[onclick*="inputSquare"] {
+  background-color: #b19cd9;
+  color: #fff;
+}
+
+/* 빈칸을 위한 스타일 */
+.empty {
+  background-color: transparent;
+  border: none;
+}
+
+/* 버튼 클릭 시 효과 */
+button:active {
+  transform: scale(0.95); /* 버튼 클릭 시 약간 축소 */
+  transition: transform 0.1s ease-in-out; /* 클릭 시 부드럽게 애니메이션 */
+  opacity: 0.7;
+}
+
+/* 결과창 스타일 */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  height: 300px;
+  padding: 15px;
+  background-color: #3c3c3c;
+  color: #ffffff;
+  font-size: 1.6em;
+  text-align: right;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+/* 결과 항목 스타일 */
+.result {
+  padding: 12px;
+  border-bottom: 1px solid #444;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #282828;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* 결과 항목에 마우스를 올리면 배경색 변경 */
+.result:hover {
+  background-color: #f08a24;
+}
+
+.result:not(:empty) {
+  cursor: pointer;
+}
+
+.result:last-child {
+  border-bottom: none;
+}
+
+/* 반응형 디자인 - 모바일 화면에 맞춰 조정 */
+@media (max-width: 768px) {  /* 모바일 화면 크기에 맞춰 조정 */
+  .calculator {
+    width: 100%; /* 화면 크기에 맞춰 계산기 크기 조정 */
+    margin: 10px;
+  }
+
+  .display {
+    font-size: 1.8em;
+  }
+
+  .buttons {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  button {
+    padding: 15px;
+    font-size: 1.1em;
+  }
+
+  .results {
+    width: 100%; /* 화면 크기에 맞춰 결과창 크기 조정 */
+  }
+}
