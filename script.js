@@ -43,14 +43,16 @@ function inputSquare() {
 function calculate() {
   try {
     const result = calculateExpression(currentInput);
-    currentInput = formatResult(result); // 계산된 값은 소수점 6자리까지 포맷
-    saveHistory(`${currentInput} = ${formatResult(result)}`);
+    const formattedResult = formatResult(result); // 계산된 값은 소수점 6자리까지 포맷
+    saveHistory(`${currentInput} = ${formattedResult}`); // 원래 수식과 결과 기록
+    currentInput = formattedResult;
     updateDisplay();
   } catch (error) {
     currentInput = 'Error';
     updateDisplay();
   }
 }
+
 
 // 수식 계산 함수 (eval 없이 계산)
 function calculateExpression(expression) {
